@@ -3,7 +3,7 @@ import json
 
 def log(event, context):
     body = json.loads(event.get('body'))
-    print(body)
+    print(json.dumps(body))
 
     response = {
         "statusCode": 200,
