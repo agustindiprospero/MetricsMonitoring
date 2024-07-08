@@ -1,0 +1,18 @@
+
+service: MetricsMonitoring
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  stage: ${opt:stage}
+
+functions:
+  log:
+    handler: handler.log
+    timeout: 30
+    events:
+      - http:
+          path: MetricsMonitoring/log
+          method: post
+          private: false
