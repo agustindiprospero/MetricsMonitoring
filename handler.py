@@ -7,7 +7,7 @@ def log(event, context):
 
     response = {
         "statusCode": 200,
-        "message": "log register"
+        "body": json.dumps({"successful":"log register"})
     }
 
     return response
